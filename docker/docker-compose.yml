@@ -1,0 +1,22 @@
+---
+version: "2.2"
+services:
+  tomcat1:
+    image: tomcat:9.0
+    ports:
+      - 8085:8080
+    volumes:
+      - /home/sindhu/compose_mounts:/home/
+    networks:
+      - Testbridge
+  tomcat2:
+    image: tomcat:9.0
+    ports:
+      - 8086:8080
+    volumes:
+      - /home/sindhu/compose_mounts:/home/
+    networks:
+      - Testbridge
+networks:
+  Testbridge:
+    external: true
